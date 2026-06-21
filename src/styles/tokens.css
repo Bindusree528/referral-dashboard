@@ -1,0 +1,172 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Single source of truth for color, spacing, type, radius, shadow, motion.
+   Light mode is default; dark mode overrides via [data-theme="dark"].
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  /* ---- Brand (indigo/violet) ---- */
+  --color-brand-50: #f0f0ff;
+  --color-brand-100: #e5e4ff;
+  --color-brand-200: #cbc9ff;
+  --color-brand-300: #a5a1ff;
+  --color-brand-400: #8480ff;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #362f9e;
+  --color-brand-900: #2c2780;
+
+  /* ---- Neutrals ---- */
+  --color-gray-0: #ffffff;
+  --color-gray-25: #fbfbfd;
+  --color-gray-50: #f6f7f9;
+  --color-gray-100: #eef0f3;
+  --color-gray-200: #e2e5ea;
+  --color-gray-300: #cbd0d9;
+  --color-gray-400: #9aa2b1;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5263;
+  --color-gray-700: #364152;
+  --color-gray-800: #1f2733;
+  --color-gray-900: #11151c;
+  --color-gray-950: #0a0d12;
+
+  /* ---- Semantic ---- */
+  --color-success-50: #ecfdf5;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-danger-50: #fef2f2;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+
+  /* ---- Surface roles (theme-aware) ---- */
+  --bg-app: var(--color-gray-50);
+  --bg-surface: var(--color-gray-0);
+  --bg-surface-raised: var(--color-gray-0);
+  --bg-surface-sunken: var(--color-gray-25);
+  --bg-hover: var(--color-gray-50);
+  --bg-active: var(--color-brand-50);
+  --bg-overlay: rgba(15, 18, 26, 0.5);
+
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-500);
+  --text-tertiary: var(--color-gray-400);
+  --text-on-brand: #ffffff;
+  --text-link: var(--color-brand-600);
+
+  --border-subtle: var(--color-gray-100);
+  --border-default: var(--color-gray-200);
+  --border-strong: var(--color-gray-300);
+
+  --brand-solid: var(--color-brand-600);
+  --brand-solid-hover: var(--color-brand-700);
+  --brand-text: var(--color-brand-600);
+  --brand-soft-bg: var(--color-brand-50);
+  --brand-soft-border: var(--color-brand-200);
+
+  /* ---- Typography ---- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;     /* 12px */
+  --fs-sm: 0.8125rem;   /* 13px */
+  --fs-base: 0.9375rem; /* 15px */
+  --fs-md: 1rem;        /* 16px */
+  --fs-lg: 1.125rem;    /* 18px */
+  --fs-xl: 1.375rem;    /* 22px */
+  --fs-2xl: 1.75rem;    /* 28px */
+  --fs-3xl: 2.25rem;    /* 36px */
+
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 999px;
+
+  /* ---- Shadow (soft, premium — not heavy drop shadows) ---- */
+  --shadow-xs: 0 1px 2px rgba(17, 21, 28, 0.04);
+  --shadow-sm: 0 1px 3px rgba(17, 21, 28, 0.06), 0 1px 2px rgba(17, 21, 28, 0.04);
+  --shadow-md: 0 4px 10px rgba(17, 21, 28, 0.06), 0 2px 4px rgba(17, 21, 28, 0.04);
+  --shadow-lg: 0 12px 24px rgba(17, 21, 28, 0.08), 0 4px 8px rgba(17, 21, 28, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.25);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 280ms;
+
+  /* ---- Layout ---- */
+  --shell-max-width: 1280px;
+  --navbar-height: 64px;
+}
+
+/* ==========================================================================
+   DARK THEME
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-app: var(--color-gray-950);
+  --bg-surface: #11151c;
+  --bg-surface-raised: #161b24;
+  --bg-surface-sunken: #0d1117;
+  --bg-hover: #1a202c;
+  --bg-active: rgba(99, 102, 241, 0.14);
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  --text-primary: #f3f4f6;
+  --text-secondary: #9aa2b1;
+  --text-tertiary: #6b7280;
+  --text-on-brand: #ffffff;
+  --text-link: var(--color-brand-400);
+
+  --border-subtle: #1d232e;
+  --border-default: #262d3a;
+  --border-strong: #343c4c;
+
+  --brand-solid: var(--color-brand-500);
+  --brand-solid-hover: var(--color-brand-400);
+  --brand-text: var(--color-brand-400);
+  --brand-soft-bg: rgba(99, 102, 241, 0.12);
+  --brand-soft-border: rgba(99, 102, 241, 0.3);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
