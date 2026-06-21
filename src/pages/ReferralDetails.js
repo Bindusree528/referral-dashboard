@@ -21,7 +21,8 @@ function ReferralDetails() {
   
 useEffect(() => {
   fetchReferral();
-}, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [id]);
 
   const fetchReferral = async () => {
     try {
