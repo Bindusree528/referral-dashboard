@@ -18,9 +18,10 @@ function ReferralDetails() {
   const [referral, setReferral] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  
+useEffect(() => {
   fetchReferral();
-}, [id]);
+}, []);
 
   const fetchReferral = async () => {
     try {
